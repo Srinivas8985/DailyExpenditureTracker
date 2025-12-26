@@ -33,7 +33,7 @@ function App() {
       <div className="app-container">
         <header className="mb-8 text-center">
           <h1 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-brand mb-2">
-            My Spend Manager
+            My Daily Expenses
           </h1>
           <p className="text-gray-500">Track your daily expenses effortlessly</p>
         </header>
