@@ -55,7 +55,7 @@ const Expenses = () => {
                             ) : (
                                 filteredExpenses.map((expense) => (
                                     <motion.tr
-                                        key={expense.id}
+                                        key={expense._id || expense.id}
                                         initial={{ opacity: 0 }}
                                         animate={{ opacity: 1 }}
                                         exit={{ opacity: 0, height: 0 }}
@@ -72,11 +72,11 @@ const Expenses = () => {
                                             {new Date(expense.date || Date.now()).toLocaleDateString()}
                                         </td>
                                         <td className="p-4 font-bold text-white">
-                                            -${expense.amount.toFixed(2)}
+                                            -₹{expense.amount.toFixed(2)}
                                         </td>
                                         <td className="p-4 pr-6 text-right">
                                             <button
-                                                onClick={() => deleteExpense(expense.id)}
+                                                onClick={() => deleteExpense(expense._id || expense.id)}
                                                 className="text-gray-500 hover:text-red-400 p-2 hover:bg-red-500/10 rounded-lg transition-colors"
                                             >
                                                 <Trash2 className="w-4 h-4" />
